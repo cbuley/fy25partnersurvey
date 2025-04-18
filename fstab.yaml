@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://adobe-my.sharepoint.com/:f:/r/personal/buley_adobe_com/Documents/Edge%20Forms?csf=1&web=1&e=rd6EnH"
+    url: "https://adobe-my.sharepoint.com/:f:/r/personal/buley_adobe_com/Documents/Edge%20Forms"
     type: "markup"
     suffix: ".html"
