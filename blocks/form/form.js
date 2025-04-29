@@ -514,7 +514,7 @@ export async function fetchForm(pathname) {
   // get the main form
   let data;
   let path = pathname;
-  if (path.startsWith(window.location.origin) && !path.endsWith('.json')) {
+  if (path.startsWith(window.location.origin) && !path.includes('.json')) {
     if (path.endsWith('.html')) {
       path = path.substring(0, path.lastIndexOf('.html'));
     }
