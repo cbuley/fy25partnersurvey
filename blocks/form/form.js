@@ -8,6 +8,7 @@ import {
   getSitePageName,
 } from './util.js';
 import GoogleReCaptcha from './integrations/recaptcha.js';
+import enhanceAccountAutocomplete from './integrations/account-autocomplete.js';
 import componentDecorator from './mappings.js';
 import DocBasedFormToAF from './transform.js';
 import transferRepeatableDOM, { insertAddButton, insertRemoveButton } from './components/repeat/repeat.js';
@@ -429,6 +430,7 @@ export async function createForm(formDef, data) {
     form.className = formDef.appliedCssClassNames;
   }
   await generateFormRendition(formDef, form);
+  enhanceAccountAutocomplete(form);
 
   let captcha;
   if (captchaField) {
