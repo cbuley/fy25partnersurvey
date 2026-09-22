@@ -23,9 +23,9 @@ function getRows(payload) {
 }
 
 /**
- * Read values from the published shared-account sheet.
+ * Read values from the published shared-project sheet.
  *
- * For a simple account-name list, the Option column is used as both
+ * For a simple project-name list, the Option column is used as both
  * the displayed suggestion and the submitted input value.
  */
 function getValues(rows) {
@@ -58,19 +58,19 @@ function getValues(rows) {
  * The original input is preserved, including its name attribute,
  * so normal EDS form submission continues to handle the value.
  */
-export default async function enhanceAccountAutocomplete(root = document) {
+export default async function enhanceProjectAutocomplete(root = document) {
   const input = root.querySelector(`input[name="${FIELD_NAME}"]`);
 
   if (!input) {
-    console.warn(`Account field not found: input[name="${FIELD_NAME}"]`);
+    console.warn(`Project field not found: input[name="${FIELD_NAME}"]`);
     return false;
   }
 
-  if (input.dataset.accountAutocomplete === 'true') {
+  if (input.dataset.projectAutocomplete === 'true') {
     return true;
   }
 
-  input.dataset.accountAutocomplete = 'true';
+  input.dataset.projectAutocomplete = 'true';
 
   const baseId = input.id || FIELD_NAME;
   const listId = `${baseId}-suggestions`.replace(/[^a-zA-Z0-9_-]/g, '-');
@@ -109,7 +109,7 @@ export default async function enhanceAccountAutocomplete(root = document) {
     );
   } catch (error) {
     // Leave the text input usable even if the suggestion endpoint fails.
-    console.warn('Account suggestions could not be loaded.', error);
+    console.warn('Project suggestions could not be loaded.', error);
   }
 
   return true;
