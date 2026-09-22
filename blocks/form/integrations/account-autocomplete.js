@@ -1,4 +1,3 @@
-
 const FIELD_NAME = 'accountname';
 
 // Replace this with the JSON endpoint for your form workbook.
