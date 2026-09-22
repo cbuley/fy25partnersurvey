@@ -9,7 +9,7 @@ import {
 } from './util.js';
 import GoogleReCaptcha from './integrations/recaptcha.js';
 import enhanceAccountAutocomplete from './integrations/account-autocomplete.js';
-import enhanceProjectAutocomplete from './integrations/project-autocomplete.js';
+import enhanceProgramAutocomplete from './integrations/project-autocomplete.js';
 import componentDecorator from './mappings.js';
 import DocBasedFormToAF from './transform.js';
 import transferRepeatableDOM, { insertAddButton, insertRemoveButton } from './components/repeat/repeat.js';
