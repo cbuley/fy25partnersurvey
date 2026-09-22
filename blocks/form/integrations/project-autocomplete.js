@@ -1,7 +1,7 @@
-const FIELD_NAME = 'project';
+const FIELD_NAME = 'program';
 
 // Replace this with the JSON endpoint for your form workbook.
-const OPTIONS_URL = '/scactvities/mike.json?sheet=project';
+const OPTIONS_URL = '/scactvities/mike.json?sheet=program';
 
 /**
  * Accept the common response shapes used by published spreadsheet JSON.
@@ -23,9 +23,9 @@ function getRows(payload) {
 }
 
 /**
- * Read values from the published shared-project sheet.
+ * Read values from the published shared-program sheet.
  *
- * For a simple project-name list, the Option column is used as both
+ * For a simple program-name list, the Option column is used as both
  * the displayed suggestion and the submitted input value.
  */
 function getValues(rows) {
@@ -58,19 +58,19 @@ function getValues(rows) {
  * The original input is preserved, including its name attribute,
  * so normal EDS form submission continues to handle the value.
  */
-export default async function enhanceProjectAutocomplete(root = document) {
+export default async function enhanceProgramAutocomplete(root = document) {
   const input = root.querySelector(`input[name="${FIELD_NAME}"]`);
 
   if (!input) {
-    console.warn(`Project field not found: input[name="${FIELD_NAME}"]`);
+    console.warn(`Program field not found: input[name="${FIELD_NAME}"]`);
     return false;
   }
 
-  if (input.dataset.projectAutocomplete === 'true') {
+  if (input.dataset.programAutocomplete === 'true') {
     return true;
   }
 
-  input.dataset.projectAutocomplete = 'true';
+  input.dataset.programAutocomplete = 'true';
 
   const baseId = input.id || FIELD_NAME;
   const listId = `${baseId}-suggestions`.replace(/[^a-zA-Z0-9_-]/g, '-');
@@ -109,7 +109,7 @@ export default async function enhanceProjectAutocomplete(root = document) {
     );
   } catch (error) {
     // Leave the text input usable even if the suggestion endpoint fails.
-    console.warn('Project suggestions could not be loaded.', error);
+    console.warn('Program suggestions could not be loaded.', error);
   }
 
   return true;
