@@ -1,7 +1,7 @@
 const FIELD_NAME = 'accountname';
 
 // Replace this with the JSON endpoint for your form workbook.
-const OPTIONS_URL = '/scactvities/mike-ty?sheet=account';
+const OPTIONS_URL = '/scactvities/mike?sheet=account';
 
 /**
  * Accept the common response shapes used by published spreadsheet JSON.
