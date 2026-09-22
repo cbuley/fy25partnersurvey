@@ -432,7 +432,7 @@ export async function createForm(formDef, data) {
   }
   await generateFormRendition(formDef, form);
   enhanceAccountAutocomplete(form);
-  enhanceProjectAutocomplete(form);
+  enhanceProgramAutocomplete(form);
 
   let captcha;
   if (captchaField) {
