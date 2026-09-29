@@ -1,7 +1,7 @@
 const FIELD_NAME = 'accountname';
 
 // Replace this with the JSON endpoint for your form workbook.
-const name = url.match(/\/([^/]+)form$/);
+const name = window.location.href.match(/\/([^/]+)form$/);
 const OPTIONS_URL = '/scactvities/' + name + '.json?sheet=account';
 
 /**
