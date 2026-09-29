@@ -4,7 +4,7 @@ const FIELD_NAME = 'accountname';
 const currentUrl = window.location.href;
 
 const lastSlash = currentUrl.lastIndexOf('/') + 1;
-const formWord = currentUrl.lastIndexOf('form');    
+const formWord = currentUrl.lastIndexOf('form');
 
 // Extracts the dynamic value (e.g., "mike")
 const name = currentUrl.substring(lastSlash, formWord);
