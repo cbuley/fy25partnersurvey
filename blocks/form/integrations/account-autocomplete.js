@@ -8,7 +8,7 @@ const formWord = currentUrl.lastIndexOf('form');
 
 // Extracts the dynamic value (e.g., "mike")
 const name = currentUrl.substring(lastSlash, formWord);
-const OPTIONS_URL = '/scactvities/${name}.json?sheet=account';
+const OPTIONS_URL = `/scactvities/${name}.json?sheet=account`;
 
 /**
  * Accept the common response shapes used by published spreadsheet JSON.
